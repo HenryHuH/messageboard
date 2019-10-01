@@ -59,9 +59,9 @@ watch_num = 1
 
 if(flag==1):
     #开始看视频    
-    while(watch_num<800):
+    while(watch_num<500):
         sleep(10 +random.randint(0,20))
-        swipeUp(1000,0.3)
+        swipeUp(1000,0.1)
         print('查看一个快手极速视频，已看%d个' % watch_num)
         watch_num += 1
 

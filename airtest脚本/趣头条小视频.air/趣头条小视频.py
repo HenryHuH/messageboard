@@ -39,7 +39,7 @@ if(lmovie.exists()):
     sleep(10)
     # 查看次数
     watch_num = 1
-    while(watch_num<5):
+    while(watch_num<800):
         sleep(10 +random.randint(0,20))
         swipeUp(1000,0.3)
         print('趣头条查看一个视频，已看%d个' % watch_num)
