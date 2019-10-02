@@ -15,7 +15,7 @@ def qutoutiao():
 
 def run():
 
-    schedule.every().day.at("00:24").do(kuaishou)
+    schedule.every().day.at("00:26").do(kuaishou)
 
     schedule.every().day.at("04:40").do(qutoutiao)
     while True:
