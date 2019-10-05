@@ -5,6 +5,8 @@ __author__ = "Administrator"
 from airtest.core.api import *
 from poco.drivers.android.uiautomation import AndroidUiautomationPoco
 import random
+import time
+import datetime
 
 poco = AndroidUiautomationPoco(use_airtest_input=True, screenshot_each_action=False)
 
@@ -56,14 +58,18 @@ if(leftbtn.exists()):
             flag =1
 # 查看次数
 watch_num = 1
-
+start = datetime.datetime.now()
 if(flag==1):
     #开始看视频    
-    while(watch_num<500):
+    while(True):
         sleep(10 +random.randint(0,20))
         swipeUp(1000,0.1)
         print('查看一个快手极速视频，已看%d个' % watch_num)
         watch_num += 1
+        # 根据时间判断 三个小时结束
+        end = datetime.datetime.now()
+        if((end-start).seconds >= 3600*3):
+            break
 
 # 关闭视频app
 stop_app("com.kuaishou.nebula")        
