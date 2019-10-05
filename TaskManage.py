@@ -7,20 +7,19 @@ import threading
 import time
 import os
 
+# 三小时
 def kuaishou():
     os.system("airtest run ./airtest脚本/快手极速版.air --device Android:///")
 
+# 两小时
 def qutoutiao():
     os.system("airtest run ./airtest脚本/趣头条小视频.air --device Android:///")
 
+# 根据时间执行对应的应用App
+
 def run():
-
-    schedule.every().day.at("00:26").do(kuaishou)
-
-    schedule.every().day.at("04:40").do(qutoutiao)
-    while True:
-        schedule.run_pending()
-        time.sleep(1)
+    kuaishou()
+    qutoutiao()
 
 if __name__ == "__main__":
     run()
