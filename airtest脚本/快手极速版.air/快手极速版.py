@@ -38,6 +38,8 @@ start_app("com.kuaishou.nebula",activity=None)
 # 等待8秒启动加载
 sleep(20)
 
+file = r'D:\kuaishou.log'
+f = open(file, 'w+')
 
 # 1、左上角入口
 flag=0
@@ -56,12 +58,18 @@ if(leftbtn.exists()):
             sleep(3)
             seemovie.click()
             flag =1
+        else:
+            f.write("看视频去赚钱按钮不存在" + '\n')
+    else:
+        f.write("去赚钱按钮不存在" + '\n')
+else:
+    f.write("主页左上角按钮不存在" + '\n')
+
+
 # 查看次数
 watch_num = 1
 start = datetime.datetime.now()
 if(flag==1):
-    file = r'D:\kuaishou.log'
-    f = open(file, 'w+')
     #开始看视频    
     while(True):
         sleep(10 +random.randint(0,20))
@@ -74,7 +82,7 @@ if(flag==1):
         f.write(strlog)
         print(strlog)
         watch_num += 1
-        if((cur-start).seconds >= 100):
+        if((cur-start).seconds >= 3600*3):
             break
     f.close()
 
