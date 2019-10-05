@@ -38,7 +38,7 @@ start_app("com.kuaishou.nebula",activity=None)
 # 等待8秒启动加载
 sleep(20)
 
-file = r'D:\kuaishou.log'
+file = r'D:\快手极速版.log'
 f = open(file, 'w+')
 
 # 1、左上角入口
@@ -76,7 +76,7 @@ if(flag==1):
         swipeUp(1000,0.1)        
         # 根据时间判断 三个小时结束
         cur = datetime.datetime.now()
-        timeStyle=cur.strftime("%Y--%m--%d %H:%M:%S")
+        timeStyle=cur.strftime("%Y-%m-%d %H:%M:%S")
         strlog = '查看一个快手极速视频，已看%d个' % watch_num
         strlog =strlog +timeStyle+'\n'
         f.write(strlog)
@@ -84,11 +84,12 @@ if(flag==1):
         watch_num += 1
         if((cur-start).seconds >= 3600*3):
             break
-    f.close()
+f.close()
 
 # 关闭视频app
 stop_app("com.kuaishou.nebula")        
         
 
         
+
 

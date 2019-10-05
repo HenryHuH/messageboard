@@ -3,7 +3,7 @@ __author__ = "Administrator"
 
 from airtest.core.api import *
 from poco.drivers.android.uiautomation import AndroidUiautomationPoco
-
+import datetime
 import random
 
 poco = AndroidUiautomationPoco(use_airtest_input=True, screenshot_each_action=False)
@@ -33,16 +33,33 @@ start_app("com.jifen.qukan",activity=None)
 # 进入小视频接口
 # 等待15秒启动加载
 sleep(20)
+
+file = r'D:\趣头条小视频.log'
+f = open(file, 'w+')
+start = datetime.datetime.now()
+
 lmovie = poco(name='com.jifen.qukan:id/nr',text='小视频')
 if(lmovie.exists()):
     lmovie.click()
     sleep(10)
     # 查看次数
     watch_num = 1
-    while(watch_num<800):
+    while(True):
         sleep(20 +random.randint(0,25))
         swipeUp(1000,0.1)
-        print('趣头条查看一个视频，已看%d个' % watch_num)
-        watch_num += 1
 
+        # 根据时间判断 两个小时结束
+        cur = datetime.datetime.now()
+        timeStyle=cur.strftime("%Y-%m-%d %H:%M:%S")
+        strlog = '查看一个趣头条小视频，已看%d个' % watch_num
+        strlog =strlog +timeStyle+'\n'
+        f.write(strlog)
+        print(strlog)
+        watch_num += 1
+        if((cur-start).seconds >= 3600*2):
+            break
+else:
+    f.write("小视频按钮不存在" + '\n')
+
+f.close()
 stop_app("com.jifen.qukan")
