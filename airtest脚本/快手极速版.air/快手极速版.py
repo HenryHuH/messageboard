@@ -60,19 +60,27 @@ if(leftbtn.exists()):
 watch_num = 1
 start = datetime.datetime.now()
 if(flag==1):
+    file = r'D:\kuaishou.log'
+    f = open(file, 'w+')
     #开始看视频    
     while(True):
         sleep(10 +random.randint(0,20))
-        swipeUp(1000,0.1)
-        print('查看一个快手极速视频，已看%d个' % watch_num)
-        watch_num += 1
+        swipeUp(1000,0.1)        
         # 根据时间判断 三个小时结束
-        end = datetime.datetime.now()
-        if((end-start).seconds >= 3600*3):
+        cur = datetime.datetime.now()
+        timeStyle=cur.strftime("%Y--%m--%d %H:%M:%S")
+        strlog = '查看一个快手极速视频，已看%d个' % watch_num
+        strlog =strlog +timeStyle+'\n'
+        f.write(strlog)
+        print(strlog)
+        watch_num += 1
+        if((cur-start).seconds >= 100):
             break
+    f.close()
 
 # 关闭视频app
 stop_app("com.kuaishou.nebula")        
         
 
         
+
