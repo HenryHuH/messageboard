@@ -19,11 +19,14 @@ def qutoutiao():
 def dongfang():
     os.system("airtest run ./airtest脚本/东方头条.air --device Android:///")
 
-# 根据时间执行对应的应用App
+# 两小时
+def douyin():
+    os.system("airtest run ./airtest脚本/抖音极速版.air --device Android:///")
 
 def run():
     kuaishou()
     dongfang()
+    douyin()
     qutoutiao()
 
 if __name__ == "__main__":
