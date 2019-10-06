@@ -39,7 +39,7 @@ start_app("com.kuaishou.nebula",activity=None)
 sleep(20)
 
 file = r'D:\快手极速版.log'
-f = open(file, 'w+')
+f = open(file, 'a+')
 
 # 1、左上角入口
 flag=0
@@ -82,6 +82,7 @@ if(flag==1):
         f.write(strlog)
         print(strlog)
         watch_num += 1
+        f.flush()
         if((cur-start).seconds >= 3600*3):
             break
 f.close()

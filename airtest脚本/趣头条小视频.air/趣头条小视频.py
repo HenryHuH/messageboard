@@ -35,7 +35,7 @@ start_app("com.jifen.qukan",activity=None)
 sleep(20)
 
 file = r'D:\趣头条小视频.log'
-f = open(file, 'w+')
+f = open(file, 'a+')
 start = datetime.datetime.now()
 
 lmovie = poco(name='com.jifen.qukan:id/nr',text='小视频')
@@ -56,6 +56,7 @@ if(lmovie.exists()):
         f.write(strlog)
         print(strlog)
         watch_num += 1
+        f.flush()
         if((cur-start).seconds >= 3600*2):
             break
 else:

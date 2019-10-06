@@ -35,7 +35,7 @@ start_app("com.ss.android.ugc.aweme.lite",activity=None)
 sleep(20)
 
 file = r'D:\抖音极速版.log'
-f = open(file, 'w+')
+f = open(file, 'a+')
 start = datetime.datetime.now()
 
 # 查看次数
@@ -52,6 +52,7 @@ while(True):
     f.write(strlog)
     print(strlog)
     watch_num += 1
+    f.flush()
     if((cur-start).seconds >= 3600*2):
         break
 

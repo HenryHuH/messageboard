@@ -36,7 +36,7 @@ start_app("com.songheng.eastnews",activity=None)
 sleep(20)
 
 file = r'D:\东方头条.log'
-f = open(file, 'w+')
+f = open(file, 'a+')
 start = datetime.datetime.now()
 
 movie = poco(name='com.songheng.eastnews:id/ab3',text='视频')
@@ -66,6 +66,7 @@ if(movie.exists()):
                 f.write(strlog)
                 print(strlog)
                 watch_num += 1
+                f.flush()
                 if((cur-start).seconds >= 3600*2):
                     break
         else:

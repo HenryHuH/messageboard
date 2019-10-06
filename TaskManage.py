@@ -24,10 +24,10 @@ def douyin():
     os.system("airtest run ./airtest脚本/抖音极速版.air --device Android:///")
 
 def run():
-    kuaishou()
     dongfang()
     douyin()
     qutoutiao()
+    kuaishou()
 
 if __name__ == "__main__":
     run()
