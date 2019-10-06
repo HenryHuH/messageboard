@@ -45,7 +45,7 @@ if(lmovie.exists()):
     # 查看次数
     watch_num = 1
     while(True):
-        sleep(20 +random.randint(0,25))
+        sleep(10 +random.randint(0,10))
         swipeUp(1000,0.1)
 
         # 根据时间判断 两个小时结束

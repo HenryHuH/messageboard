@@ -72,7 +72,7 @@ start = datetime.datetime.now()
 if(flag==1):
     #开始看视频    
     while(True):
-        sleep(10 +random.randint(0,20))
+        sleep(8 +random.randint(0,8))
         swipeUp(1000,0.1)        
         # 根据时间判断 三个小时结束
         cur = datetime.datetime.now()
@@ -91,5 +91,6 @@ stop_app("com.kuaishou.nebula")
         
 
         
+
 
 
