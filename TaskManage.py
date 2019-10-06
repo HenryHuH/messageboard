@@ -15,10 +15,15 @@ def kuaishou():
 def qutoutiao():
     os.system("airtest run ./airtest脚本/趣头条小视频.air --device Android:///")
 
+# 两小时
+def dongfang():
+    os.system("airtest run ./airtest脚本/东方头条.air --device Android:///")
+
 # 根据时间执行对应的应用App
 
 def run():
     kuaishou()
+    dongfang()
     qutoutiao()
 
 if __name__ == "__main__":
