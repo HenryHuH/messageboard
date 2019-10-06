@@ -55,7 +55,7 @@ if(movie.exists()):
             # 查看次数
             watch_num = 1
             while(True):
-                sleep(10 +random.randint(0,10))
+                sleep(8 +random.randint(0,8))
                 swipeUp(1000,-0.1)
 
                 # 根据时间判断 两个小时结束
@@ -66,7 +66,7 @@ if(movie.exists()):
                 f.write(strlog)
                 print(strlog)
                 watch_num += 1
-                if((cur-start).seconds >= 300*2):
+                if((cur-start).seconds >= 3600*2):
                     break
         else:
             f.write("左上角ImageView不存在" + '\n')
