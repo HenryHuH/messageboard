@@ -26,10 +26,10 @@ def douyin():
 def run():
 
     while(True):
-        kuaishou()
         dongfang()
         douyin()
         qutoutiao()
+        kuaishou()
 
 
 if __name__ == "__main__":
