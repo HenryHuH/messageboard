@@ -19,7 +19,7 @@ def getSize():
 def swipeUp(t,percent):
     l = getSize()
     x1 = int(l[0] * 0.5)+ random.randint(0,20) #x坐标
-    y1 = int(l[1] * 0.6)  #起始y坐标
+    y1 = int(l[1] * 0.8)  #起始y坐标
     y2 = int(l[1] * percent)   #终点y坐标
 
     swipe((x1, y1), (x1, y2),t+random.randint(0,20))
