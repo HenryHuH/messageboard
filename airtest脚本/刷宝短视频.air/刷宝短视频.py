@@ -19,35 +19,34 @@ def getSize():
 def swipeUp(t,percent):
     l = getSize()
     x1 = int(l[0] * 0.5)+ random.randint(0,20) #x坐标
-    y1 = int(l[1] * 0.8)  #起始y坐标
+    y1 = int(l[1] * 0.6)  #起始y坐标
     y2 = int(l[1] * percent)   #终点y坐标
 
     swipe((x1, y1), (x1, y2),t+random.randint(0,20))
     
-# =============================================================
-# 抖音极速版app
+# 刷宝短视频app
 # 先关闭视频app
-stop_app("com.ss.android.ugc.aweme.lite")
-# 开始阅读趣头条小视频        
-start_app("com.ss.android.ugc.aweme.lite",activity=None)
+stop_app("com.jm.video")
+# 开始阅读刷宝短视频       
+start_app("com.jm.video",activity=None)
 # 进入小视频接口
-# 等待15秒启动加载
+poco("com.jm.video:id/image_view")# 等待15秒启动加载
 sleep(20)
 
-file = r'D:\抖音极速版.log'
+file = r'D:\刷宝短视频.log'
 f = open(file, 'a+')
 start = datetime.datetime.now()
 
 # 查看次数
 watch_num = 1
 while(True):
-    sleep(8 +random.randint(0,8))
+    sleep(8 +random.randint(0,10))
     swipeUp(1000,0.1)
 
     # 根据时间判断 两个小时结束
     cur = datetime.datetime.now()
     timeStyle=cur.strftime("%Y-%m-%d %H:%M:%S")
-    strlog = '查看一个抖音极速版小视频，已看%d个' % watch_num
+    strlog = '查看一个刷宝小视频，已看%d个' % watch_num
     strlog =strlog +timeStyle+'\n'
     f.write(strlog)
     print(strlog)
@@ -57,4 +56,4 @@ while(True):
         break
 
 f.close()
-stop_app("com.ss.android.ugc.aweme.lite")
+stop_app("com.jm.video")

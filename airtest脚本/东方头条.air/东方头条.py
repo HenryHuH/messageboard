@@ -67,7 +67,7 @@ if(movie.exists()):
                 print(strlog)
                 watch_num += 1
                 f.flush()
-                if((cur-start).seconds >= 3600*2):
+                if((cur-start).seconds >= 3600):
                     break
         else:
             f.write("左上角ImageView不存在" + '\n')

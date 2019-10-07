@@ -83,7 +83,7 @@ if(flag==1):
         print(strlog)
         watch_num += 1
         f.flush()
-        if((cur-start).seconds >= 3600*3):
+        if((cur-start).seconds >= 3600):
             break
 f.close()
 

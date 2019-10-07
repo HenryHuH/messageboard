@@ -57,7 +57,7 @@ if(lmovie.exists()):
         print(strlog)
         watch_num += 1
         f.flush()
-        if((cur-start).seconds >= 3600*2):
+        if((cur-start).seconds >= 3600):
             break
 else:
     f.write("小视频按钮不存在" + '\n')
