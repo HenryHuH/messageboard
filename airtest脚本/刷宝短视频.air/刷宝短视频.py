@@ -53,8 +53,6 @@ def test():
     poco.apply_motion_tracks(tracks)
     sleep(8)
     
-while(True):
-    test()
 # 刷宝短视频app
 # 先关闭视频app
 stop_app("com.jm.video")
